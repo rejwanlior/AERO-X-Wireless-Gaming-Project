@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Metadata and Font configurations-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AERO-X | Ultimate Gaming Audio</title>
+    
+    <!-- External Resources: Google Fonts (Orbitron for Gaming feel, Inter for readability)-->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for UI Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+    <!-- Main Navigation: Fixed glassmorphism header-->
+    <nav class="navbar">
+        <a href="#" class="logo-link">
+            <div class="logo">AERO-<span>X</span></div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+        </ul>
+        <!-- CTA (Call to Action) in Navbar-->
+        <a href="#pricing" class="nav-btn">Buy Now</a>
+    </nav>
+
+    <!-- Hero Section: Main value proposition and product preview-->
+    <header class="hero">
+        <div class="hero-content">
+            <span class="badge">New Release</span>
+            <h1>Level Up Your <br><span class="highlight">Audio Game</span></h1>
+            <p>Experience zero-latency wireless sound with the new AERO-X. Engineered for pro gamers who demand precision.</p>
+            
+            <!-- Hero CTAs: Primary for conversion, Secondary for engagement-->
+            <div class="hero-btns">
+                <a href="#pricing">
+                    <button class="btn-primary">Buy Now</button>
+                </a>
+                <button class="btn-secondary"><i class="fas fa-play"></i> Watch Trailer</button>
+            </div>
+        </div>
+        
+        <!-- Hero Visual: Product image with absolute positioned glow effect-->
+        <div class="hero-image">
+            <img src="images/headphones-image.png" alt="AERO-X Headset">
+            <div class="glow-effect"></div>
+        </div>
+    </header>
+
+    <!-- Features Section: Grid layout for product selling points-->
+    <section id="features" class="features">
+        <div class="section-title">
+            <h2>Why Choose <span class="highlight">AERO-X</span>?</h2>
+        </div>
+        
+        <div class="features-grid">
+            <!-- Feature Card: Low Latency-->
+            <div class="feature-card">
+                <i class="fas fa-bolt glow-icon"></i>
+                <h3>Ultra-Low Latency</h3>
+                <p>2.4GHz wireless technology ensures your audio is always in sync with your game.</p>
+            </div>
+            
+            <!-- Feature Card: Spatial Audio-->
+            <div class="feature-card">
+                <i class="fas fa-microchip glow-icon"></i>
+                <h3>Spatial Audio 7.1</h3>
+                <p>Hear your enemies before you see them with precision surround sound technology.</p>
+            </div>
+            
+            <!-- Feature Card: Battery Life-->
+            <div class="feature-card">
+                <i class="fas fa-battery-full glow-icon"></i>
+                <h3>50-Hour Battery</h3>
+                <p>Go for days without charging. Perfect for long weekend gaming marathons.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section: Tiered product comparison--> 
+    <section id="pricing" class="pricing">
+        <div class="section-title">
+            <h2>Choose Your <span class="highlight">Gear Level</span></h2>
+            <p>Simple pricing for legendary performance.</p>
+        </div>
+
+        <div class="pricing-container">
+            <!-- Standard Plan-->
+            <div class="price-card">
+                <h3>Standard</h3>
+                <div class="price">$149</div>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> Stereo Sound</li>
+                    <li><i class="fas fa-check"></i> 20h Battery</li>
+                    <li><i class="fas fa-check"></i> Wired Connection</li>
+                    <li class="disabled"><i class="fas fa-times"></i> Noise Cancelling</li>
+                </ul>
+                <button class="btn-secondary">Buy Now</button>
+            </div>
+
+            <!-- Pro Plan: Highlighted as 'Popular' for better conversion-->
+            <div class="price-card popular">
+                <div class="popular-tag">Most Popular</div>
+                <h3>Pro Gamer</h3>
+                <div class="price">$249</div>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> 7.1 Spatial Audio</li>
+                    <li><i class="fas fa-check"></i> 50h Battery</li>
+                    <li><i class="fas fa-check"></i> Wireless 2.4GHz</li>
+                    <li><i class="fas fa-check"></i> Active Noise Cancelling</li>
+                </ul>
+                <button class="btn-primary">Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer: Brand presence and social proof-->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="logo">AERO-<span>X</span></div>
+            <p>© 2025 AERO-X Gaming. All rights reserved.</p>
+            <div class="socials">
+                <a href="#"><i class="fab fa-discord"></i></a>
+                <a href="#"><i class="fab fa-twitch"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button: Back to Top functionality-->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</body>
+</html>

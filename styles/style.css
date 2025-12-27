@@ -1,0 +1,511 @@
+/* --- Global Variables & Theme Config --- */
+:root {
+    --bg-dark: #0a0a0a;
+    --bg-card: #151515;
+    --primary-neon: #8b5cf6; 
+    --text-white: #ffffff;
+    --text-gray: #a1a1aa;
+    --font-main: 'Inter', sans-serif;
+    --font-heading: 'Orbitron', sans-serif; 
+}
+
+/* --- Base Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: var(--font-main);
+    overflow-x: hidden; /* Prevents layout breaking from absolute positioned glow effects */
+}
+
+/* --- Navigation: Fixed Glassmorphism Style --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--primary-neon);
+}
+
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-gray);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-neon);
+}
+
+.nav-btn {
+    background: transparent;
+    border: 2px solid var(--primary-neon);
+    color: var(--primary-neon);
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    background: var(--primary-neon);
+    color: white;
+    box-shadow: 0 0 20px var(--primary-neon);
+}
+
+/* --- Hero Section: Split Layout --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.badge {
+    background: rgba(139, 92, 246, 0.2);
+    color: var(--primary-neon);
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid var(--primary-neon);
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    margin-top: 20px;
+    line-height: 1.1;
+}
+
+.highlight {
+    color: var(--primary-neon);
+    text-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+}
+
+.hero p {
+    color: var(--text-gray);
+    font-size: 1.2rem;
+    margin: 25px 0 40px;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 20px;
+}
+
+.hero-btns a {
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--primary-neon);
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 15px 35px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.hero-image {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 500px;
+    z-index: 2;
+    filter: drop-shadow(0 0 50px rgba(0,0,0,0.5));
+}
+
+.glow-effect {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--primary-neon);
+    filter: blur(150px);
+    opacity: 0.3;
+    z-index: 1;
+}
+
+/* --- Features: Flexbox Layout --- */
+.features {
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.section-title h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+/* Using Flexbox instead of Grid for better control over orphans (3rd card centering) */
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.feature-card {
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.4s ease;
+    flex: 1 1 300px;
+    max-width: 400px;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-neon);
+    background: linear-gradient(145deg, #151515, #1a1a1a);
+}
+
+.glow-icon {
+    font-size: 2.5rem;
+    color: var(--primary-neon);
+    margin-bottom: 20px;
+    display: inline-block;
+    filter: drop-shadow(0 0 10px var(--primary-neon));
+}
+
+.feature-card h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.feature-card p {
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+/* --- Pricing Section --- */
+.pricing {
+    padding: 100px 8%;
+    background: linear-gradient(to bottom, var(--bg-dark), #111);
+    text-align: center;
+}
+
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.price-card {
+    background: var(--bg-card);
+    padding: 50px 40px;
+    border-radius: 20px;
+    width: 350px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Centering CTA buttons inside pricing cards */
+.price-card .btn-primary, 
+.price-card .btn-secondary {
+    margin: auto auto 0 auto;
+    width: 100%;
+    max-width: 220px;
+    text-decoration: none;
+}
+
+.price-card.popular {
+    border: 2px solid var(--primary-neon);
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.2);
+}
+
+.popular-tag {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-neon);
+    color: white;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.price {
+    font-size: 3.5rem;
+    font-family: var(--font-heading);
+    margin: 30px 0;
+    font-weight: 900;
+}
+
+.price-features {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 40px;
+    flex-grow: 1;
+}
+
+.price-features li {
+    margin: 15px 0;
+    color: var(--text-gray);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.price-features li i {
+    color: var(--primary-neon);
+}
+
+.price-features li.disabled {
+    opacity: 0.3;
+}
+
+/* --- Footer --- */
+.main-footer {
+    padding: 50px 8%;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.socials {
+    display: flex;
+    gap: 20px;
+    font-size: 1.5rem;
+}
+
+.socials a {
+    color: var(--text-gray);
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    color: var(--primary-neon);
+    transform: scale(1.2);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--bg-card);
+    border: 2px solid var(--primary-neon);
+    color: var(--primary-neon);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+    text-decoration: none;
+}
+
+.back-to-top:hover {
+    background-color: var(--primary-neon);
+    color: white;
+    transform: translateY(-5px);
+}
+
+/* --- RESPONSIVE DESIGN: Media Queries --- */
+
+/* Tablet Optimization (Max-width: 1024px) */
+@media (max-width: 1024px) {
+    .hero {
+        /* Fixes issue 2: Reduced excessive spacing on iPad Pro */
+        height: auto; 
+        min-height: 80vh; 
+        flex-direction: column;
+        text-align: center;
+        padding: 140px 5% 60px 5%;
+        gap: 30px;
+    }
+
+    .hero-content {
+        align-items: center;
+        flex: none;
+    }
+
+    .hero h1 {
+        font-size: 3.2rem;
+    }
+
+    .hero-btns {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .hero-image {
+        flex: none;
+        width: 100%;
+    }
+
+    .hero-image img {
+        max-width: 60%; /* Balanced size for large tablets */
+        margin-top: 20px;
+    }
+
+    /*Adjusting section padding to prevent "empty" feel */
+    .features, .pricing {
+        padding: 60px 8%;
+    }
+}
+
+/* Mobile Optimization (Max-width: 600px) */
+@media (max-width: 600px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 10px;
+    }
+
+    .nav-btn { display: none; }
+
+    .hero {
+        padding-top: 120px;
+    }
+
+    .hero h1 { font-size: 2.2rem; }
+
+    /*Ensuring both the anchor and the button respect the max-width */
+    .hero-btns {
+        flex-direction: column;
+        align-items: center; 
+        gap: 12px;
+        width: 100%;
+    }
+
+    /* Target both the link and the button for maximum control */
+    .hero-btns a, 
+    .btn-primary, 
+    .btn-secondary {
+        width: 100% !important; /* Full width up to the limit */
+        max-width: 250px !important; /* Forces the button to stay at a professional size */
+        box-sizing: border-box;
+    }
+
+    .btn-primary, .btn-secondary {
+        justify-content: center;
+        padding: 12px 20px;
+        margin: 0 auto; 
+    }
+
+    .hero-image img {
+        max-width: 85%;
+    }
+
+    .feature-card {
+        flex: 1 1 100%;
+    }
+
+    .price-card.popular {
+        transform: scale(1);
+        margin: 10px 0;
+    }
+}
+
+
